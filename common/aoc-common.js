@@ -8,3 +8,11 @@ module.exports.loadLinesIntoArray = function(filename) {
         });
     });
 }
+
+module.exports.loadAsString = function(filename) {
+    return new Promise((resolve) => {
+        fs.readFile(filename, 'utf8', function(err, contents) {
+            resolve(contents);
+        });
+    });
+}
